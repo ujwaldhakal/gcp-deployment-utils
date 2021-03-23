@@ -9,12 +9,6 @@ import (
 )
 
 
-type Config struct {
-	environment          string
-	project              string
-	credential_file_path string
-	github_repo_name     string
-}
 
 func PullImageByUrl(imageUrl string) error {
 	p := exec.Command(
@@ -29,10 +23,10 @@ func PullImageByUrl(imageUrl string) error {
 	return err
 }
 
-func Build(config Config, commitHash string) {
+func Build(project string,githubRepoName string, commitHash string) {
 
-	fullGcrUrl := fmt.Sprintf("gcr.io/%s/%s:%s", config.project, config.github_repo_name, commitHash)
-	localBuiltImagePath := fmt.Sprintf("%s:%s", config.github_repo_name, commitHash)
+	fullGcrUrl := fmt.Sprintf("gcr.io/%s/%s:%s", project, githubRepoName, commitHash)
+	localBuiltImagePath := fmt.Sprintf("%s:%s", githubRepoName, commitHash)
 	pullImage := PullImageByUrl(fullGcrUrl)
 
 	if pullImage != nil {
