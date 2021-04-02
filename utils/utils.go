@@ -10,14 +10,14 @@ import (
 
 
 type EnvironmentConfig struct {
-	environment          string
-	project              string
-	machine_type         string
-	region               string
-	credential_file_path string
-	zone                 string
-	app_name             string
-	github_repo_name     string
+	Environment          string
+	Project              string
+	Machine_type         string
+	Region               string
+	Credential_file_path string
+	Zone                 string
+	App_name             string
+	Github_repo_name     string
 }
 
 func ConvertTfConfigToJson(fileName string) EnvironmentConfig {
@@ -42,13 +42,13 @@ func ConvertTfConfigToJson(fileName string) EnvironmentConfig {
 	}
 
 	return EnvironmentConfig{
-		environment:          jsonMap["environment"].(string),
-		project:              jsonMap["project"].(string),
-		machine_type:         jsonMap["machine_type"].(string),
-		region:               jsonMap["region"].(string),
-		credential_file_path: jsonMap["credential_file_path"].(string),
-		zone:                 jsonMap["zone"].(string),
-		app_name:             jsonMap["app_name"].(string),
-		github_repo_name:     jsonMap["github_repo_name"].(string),
+		Environment:          jsonMap["environment"].(string),
+		Project:              jsonMap["project"].(string),
+		Machine_type:         jsonMap["machine_type"].(string),
+		Region:               jsonMap["region"].(string),
+		Credential_file_path: jsonMap["credential_file_path"].(string),
+		Zone:                 jsonMap["zone"].(string),
+		App_name:             jsonMap["app_name"].(string),
+		Github_repo_name:     jsonMap["github_repo_name"].(string),
 	}
 }
