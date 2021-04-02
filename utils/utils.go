@@ -8,7 +8,6 @@ import (
 	"strings"
 )
 
-
 type EnvironmentConfig struct {
 	Environment          string
 	Project              string

@@ -8,8 +8,6 @@ import (
 	"strings"
 )
 
-
-
 func PullImageByUrl(imageUrl string) error {
 	p := exec.Command(
 		"docker",
@@ -23,7 +21,7 @@ func PullImageByUrl(imageUrl string) error {
 	return err
 }
 
-func Build(project string,githubRepoName string, commitHash string) {
+func Build(project string, githubRepoName string, commitHash string) {
 
 	fullGcrUrl := fmt.Sprintf("gcr.io/%s/%s:%s", project, githubRepoName, commitHash)
 	localBuiltImagePath := fmt.Sprintf("%s:%s", githubRepoName, commitHash)
