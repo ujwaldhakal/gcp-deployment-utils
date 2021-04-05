@@ -56,12 +56,12 @@ func PushImage(fullGcrUrl string) {
 	push.Run()
 }
 
-func CreateImageTag(localBuiltImagePath string, fullDockerUrl string) {
+func CreateImageTag(localBuiltImagePath string, fullGcrUrl string) {
 	tag := exec.Command(
 		"docker",
 		"tag",
 		localBuiltImagePath,
-		fullDockerUrl,
+		fullGcrUrl,
 	)
 	tag.Stdout = os.Stdout
 	tag.Stderr = os.Stderr
