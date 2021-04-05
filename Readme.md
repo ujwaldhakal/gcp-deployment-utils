@@ -1,7 +1,8 @@
-### EASY GCP DEPLOYMENT UTILS
-Just a simple library to login,pull, build and push images to GOOGLE CONTAINER REGISTRY and get the github commti hash
+### GCP Utilities
+This package consists of utilities that are required when making containerized CI/CD using GCP.
+This package will help with building, pushing, pulling, login,getting commit hash, into Google Container Registry.
 
-
-### Installation 
-* `go get "github.com/ujwaldhakal/go-gcp-docker-utils/docker"`
-* import `github.com/ujwaldhakal/go-gcp-docker-utils/docker`
+#### Followings are the three main modules
+* [Docker](https://github.com/ujwaldhakal/gcp-deployment-utils/blob/master/docker/docker.go)
+* [Git](https://github.com/ujwaldhakal/gcp-deployment-utils/blob/master/git/git.go)
+* [Utils](https://github.com/ujwaldhakal/gcp-deployment-utils/blob/master/utils/utils.go)
