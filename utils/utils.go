@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"regexp"
 	"strings"
 )
 
@@ -28,9 +29,10 @@ func ConvertTfConfigToJson(fileName string) EnvironmentConfig {
 	defer file.Close()
 
 	jsonMap := map[string]interface{}{}
+	splitter := regexp.MustCompile("\\s*=\\s*")
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		s := strings.Split(scanner.Text(), "=")
+		s := splitter.Split(scanner.Text(), -1)
 		value := s[1]
 		jsonMap[s[0]] = strings.TrimSuffix(value[1:len(value)-1], "\n") // this will remove quote & breakline
 	}
